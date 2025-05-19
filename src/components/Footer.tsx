@@ -29,12 +29,13 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300 py-10 px-6 mt-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Logo */}
-        <div>
-          <img
-            src="https://crypto.com/static/logo.svg"
-            alt="Crypto Logo"
-            className="h-8 mb-4"
-          />
+            <div>
+              <div className="flex items-center">
+          <span className="text-2xl font-bold text-cyan-400 tracking-wide">
+            RugPull
+          </span>
+        </div>
+
           <p className="text-sm">The World’s Leading Cryptocurrency Platform</p>
         </div>
 

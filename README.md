@@ -57,10 +57,10 @@ Designed to simulate a landing page for a crypto protection platform.
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/anti-rug-pulling.git
+git clone https://github.com/Vanquoc0201/FE_RugPull.git
 
 # Navigate into project
-cd anti-rug-pulling
+cd FE_RugPull
 
 # Install dependencies
 npm install

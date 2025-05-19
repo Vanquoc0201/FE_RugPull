@@ -2,25 +2,26 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "ANTI RUG PULLING là gì?",
-    answer:
-      "Đây là một nền tảng nhằm bảo vệ người dùng khỏi các dự án crypto lừa đảo bằng cách cung cấp thông tin minh bạch và công cụ kiểm tra dự án.",
-  },
-  {
-    question: "Làm sao để biết một dự án có đáng tin không?",
-    answer:
-      "Chúng tôi cung cấp hệ thống chấm điểm dựa trên tiêu chí kỹ thuật, cộng đồng và lịch sử phát triển của từng dự án.",
-  },
-  {
-    question: "Tôi có cần tài khoản để sử dụng?",
-    answer:
-      "Không bắt buộc. Bạn có thể xem thông tin miễn phí. Tuy nhiên, để đánh giá hoặc theo dõi dự án, bạn cần đăng nhập.",
-  },
-  {
-    question: "Có ứng dụng mobile không?",
-    answer:
-      "Chúng tôi đang phát triển phiên bản mobile và sẽ ra mắt trong thời gian tới.",
-  },
+  question: "What is ANTI RUG PULLING?",
+  answer:
+    "It is a platform designed to protect users from scam crypto projects by providing transparent information and project auditing tools.",
+},
+{
+  question: "How can I know if a project is trustworthy?",
+  answer:
+    "We offer a scoring system based on technical criteria, community engagement, and project development history.",
+},
+{
+  question: "Do I need an account to use the platform?",
+  answer:
+    "Not necessarily. You can view information for free. However, to rate or follow projects, you need to sign in.",
+},
+{
+  question: "Is there a mobile app?",
+  answer:
+    "We are currently developing a mobile version, which will be released soon.",
+}
+
 ];
 
 const FAQPage = () => {
@@ -34,7 +35,7 @@ const FAQPage = () => {
     <div className="min-h-screen bg-[#0f172a] text-white px-4 py-20">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-cyan-400 mb-10 text-center">
-          Câu hỏi thường gặp (FAQ)
+          Frequently Asked Questions (FAQ)
         </h1>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
