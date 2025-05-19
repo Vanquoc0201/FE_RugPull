@@ -18,9 +18,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <div className="flex items-center">
-          <span className="text-2xl font-bold text-cyan-400 tracking-wide">
-            RugPull
+          <span className="text-cyan-400 font-bold tracking-wide flex items-center gap-2 text-base uppercase">
+            🧩 RugPull
           </span>
+
         </div>
 
 
@@ -41,13 +42,13 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-4">
           <Link
             to="/login"
-            className="bg-cyan-400 text-blue-900 hover:bg-cyan-500 px-4 py-1.5 rounded-md transition"
+            className="bg-cyan-400 text-blue-900 hover:bg-cyan-500 px-4 py-1.5 rounded-full transition"
           >
             Log In
           </Link>
           <Link
             to="/signup"
-            className="bg-cyan-400 text-blue-900 hover:bg-cyan-500 px-4 py-1.5 rounded-md transition"
+            className="bg-cyan-400 text-blue-900 hover:bg-cyan-500 px-4 py-1.5 rounded-full transition"
           >
             Sign Up
           </Link>

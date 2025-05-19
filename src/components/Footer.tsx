@@ -31,9 +31,10 @@ const Footer = () => {
         {/* Logo */}
             <div>
               <div className="flex items-center">
-          <span className="text-2xl font-bold text-cyan-400 tracking-wide">
-            RugPull
-          </span>
+              <span className="text-cyan-400 font-bold tracking-wide flex items-center gap-2 text-base uppercase">
+                🧩 RugPull
+              </span>
+
         </div>
 
           <p className="text-sm">The World’s Leading Cryptocurrency Platform</p>
