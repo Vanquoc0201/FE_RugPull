@@ -9,6 +9,8 @@ import AboutPage from "../pages/HomeTemplates/AboutPage";
 import ContactPage from "../pages/HomeTemplates/ContactPage";
 import FAQPage from "../pages/HomeTemplates/FAQPage";
 import FeaturePage from "../pages/HomeTemplates/FeaturesPage";
+import RugPullPage from "../pages/HomeTemplates/RugPullPage";
+import DetectPage from "../pages/HomeTemplates/DetectPage";
 
 
 type TRoute = {
@@ -49,6 +51,14 @@ export const routes: TRoute[] = [
       {
         path: "/features",
         element : <FeaturePage />
+      },
+      {
+        path: "/rugpull",
+        element : <RugPullPage />
+      },
+      {
+        path: "/detect",
+        element : <DetectPage />
       },
     ],
   },

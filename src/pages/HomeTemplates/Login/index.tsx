@@ -50,7 +50,7 @@ const LoginPage = () => {
 
           <button
             type="submit"
-            className="w-full bg-cyan-500 hover:bg-cyan-400 text-[#0f172a] py-2 rounded-lg font-semibold transition duration-200"
+            className="w-full bg-gradient-to-r from-cyan-400 to-cyan-600 text-white py-2 rounded-lg font-semibold hover:from-cyan-500 hover:to-cyan-700 transition duration-200"
           >
             Log In
           </button>

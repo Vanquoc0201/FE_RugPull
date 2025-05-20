@@ -32,7 +32,10 @@ Designed to simulate a landing page for a crypto protection platform.
 ![FAQ Page](./public/screenshots/FAQPage.png)
 ### 🏠 Feature Page
 ![Feature Page](./public/screenshots/FeaturePage.png)
-
+### 🏠 RugPull Page
+![RugPull Page](./public/screenshots/RugPullPage.png)
+### 🏠 Detect Page
+![Detect Page](./public/screenshots/DetectPage.png)
 ### 🏠 Login Page
 ![Login Page](./public/screenshots/LoginPage.png)
 ### 🏠 SignUp Page
