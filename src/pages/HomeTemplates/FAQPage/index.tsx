@@ -45,7 +45,7 @@ const FAQPage = () => {
             >
               <button
                 onClick={() => toggle(index)}
-                className="w-full text-left text-lg font-semibold text-blue-700 hover:text-cyan-400 transition"
+                className="w-full text-left text-lg font-semibold text-cyan-200 hover:text-cyan-400 transition"
               >
                 {faq.question}
               </button>
