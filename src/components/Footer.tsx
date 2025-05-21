@@ -1,31 +1,42 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const location = useLocation();
-
-  const footerLinks = [
+  const footerSections = [
     {
-      title: "Contact",
+      title: "Products",
       links: [
-        { label: "Email", path: "/contact" },
-        { label: "Phone", path: "/contact" },
-        { label: "Address", path: "/contact" },
+        { label: "Exchange", path: "#" },
+        { label: "App", path: "#" },
+        { label: "Pay", path: "#" },
+        { label: "DeFi Wallet", path: "#" },
+        { label: "Earn", path: "#" },
       ],
     },
     {
-      title: "About Us",
+      title: "Company",
       links: [
-        { label: "Our Mission", path: "/about" },
-        { label: "Team", path: "/about" },
-        { label: "Careers", path: "/about" },
+        { label: "About", path: "/about" },
+        { label: "Careers", path: "#" },
+        { label: "Press", path: "#" },
+        { label: "Security", path: "#" },
+        { label: "News", path: "#" },
       ],
     },
     {
-      title: "FAQ",
+      title: "Resources",
       links: [
-        { label: "General", path: "/faq" },
-        { label: "Security", path: "/faq" },
-        { label: "Usage", path: "/faq" },
+        { label: "Help Center", path: "#" },
+        { label: "Academy", path: "#" },
+        { label: "Market Updates", path: "#" },
+        { label: "Events", path: "#" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { label: "Privacy Policy", path: "#" },
+        { label: "Terms of Service", path: "#" },
+        { label: "Disclosures", path: "#" },
       ],
     },
   ];
@@ -39,8 +50,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-10 px-6 mt-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {/* Logo */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+        {/* Logo and Description */}
         <div>
           <Link to="/">
             <img
@@ -50,25 +61,23 @@ const Footer = () => {
             />
           </Link>
           <p className="text-sm text-gray-300">
-            The World’s Leading Cryptocurrency Platform
+            The World's Leading Cryptocurrency Platform
           </p>
         </div>
 
-        {/* Footer Links */}
-        {footerLinks.map((section) => (
+        {/* Footer Sections */}
+        {footerSections.map((section) => (
           <div key={section.title}>
             <h4 className="font-semibold mb-2 text-white">{section.title}</h4>
             <ul className="space-y-1">
               {section.links.map(({ label, path }) => (
                 <li key={label}>
-                  <Link
-                    to={path}
-                    className={`text-sm transition hover:text-white ${
-                      location.pathname === path ? "text-cyan-400 underline" : "text-gray-300"
-                    }`}
+                  <a
+                    href={path}
+                    className="text-sm transition hover:text-white text-blue-600"
                   >
                     {label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -78,7 +87,7 @@ const Footer = () => {
 
       {/* Divider */}
       <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
-        {/* Socials */}
+        {/* Social Icons */}
         <div className="flex space-x-4 mb-4 md:mb-0">
           {socialLinks.map((s) => (
             <a

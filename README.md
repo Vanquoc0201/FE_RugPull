@@ -40,6 +40,8 @@ Designed to simulate a landing page for a crypto protection platform.
 ![Login Page](./public/screenshots/LoginPage.png)
 ### 🏠 SignUp Page
 ![SignUp Page](./public/screenshots/SignUpPage.png)
+### 🏠 Footer
+![Footer](./public/screenshots/Footer.png)
 
 ## 🧰 Tech Stack
 

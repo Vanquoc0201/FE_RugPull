@@ -8,6 +8,9 @@ const Navbar = () => {
 
   const navLinks = [
     { label: "Home", path: "/" },
+    { label: "About", path: "/about" },
+    { label: "Contact", path: "/contact" },
+    { label: "FAQ", path: "/faq" },
     { label: "Features", path: "/features" },
     { label: "What is RUG PULL", path: "/rugpull" },
   ];
