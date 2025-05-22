@@ -33,11 +33,11 @@ const FAQPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0f172a] text-white px-4 py-20">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-cyan-400 mb-10 text-center">
+      <div className="max-w-4xl mx-auto fade-in-down fade-delay-2">
+        <h1 className="text-4xl font-bold text-cyan-400 mb-10 text-center fade-in-down fade-delay-4">
           Frequently Asked Questions (FAQ)
         </h1>
-        <div className="space-y-4">
+        <div className="space-y-4 fade-in-down fade-delay-6">
           {faqs.map((faq, index) => (
             <div
               key={index}

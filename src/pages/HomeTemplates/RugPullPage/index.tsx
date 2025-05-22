@@ -4,24 +4,24 @@ const RugPullPage = () => {
   return (
     <div className="min-h-screen bg-[#0f172a] text-white px-4 py-16">
       <div className="max-w-3xl mx-auto bg-[#1e293b] border border-cyan-500 rounded-2xl shadow-xl p-8 space-y-6">
-        <h1 className="text-3xl font-bold text-cyan-400 text-center uppercase">
+        <h1 className="text-3xl font-bold text-cyan-400 text-center uppercase fade-in-down">
           Rug Pull Scams
         </h1>
 
         <section>
-          <h2 className="text-xl font-semibold text-cyan-300 mb-2">
+          <h2 className="text-xl font-semibold text-cyan-300 mb-2 fade-in-down fade-delay-1">
             What is a Rug Pull?
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-300 fade-in-down fade-delay-2">
             A rug pull is a cryptocurrency investment scam where the creators or developers of a cryptocurrency project suddenly abandon the project or exit scam, taking all the funds invested by users with them. The name originates from the idea of pulling the rug out from under investors’ feet, leaving them with worthless tokens or losing their investments entirely.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-cyan-300 mb-2">
+          <h2 className="text-xl font-semibold text-cyan-300 mb-2 fade-in-down fade-delay-3">
             Common Types of Rug Pull Scams
           </h2>
-          <ul className="list-disc list-inside text-gray-300 space-y-2">
+          <ul className="list-disc list-inside text-gray-300 space-y-2 fade-in-down fade-delay-4">
             <li>
               <strong>Fake Coin Launches:</strong> Fraudsters create a new cryptocurrency token and promote it through social media, forums, or websites, claiming it has a promising future or unique features. Once investors buy the token, the creators disappear with the funds.
             </li>
@@ -41,25 +41,25 @@ const RugPullPage = () => {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-cyan-300 mb-2">
+          <h2 className="text-xl font-semibold text-cyan-300 mb-2 fade-in-down fade-delay-5">
             Hard vs. Soft Rug Pulls
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-300 fade-in-down fade-delay-6">
             <strong>Hard Rug Pull:</strong> Developers or administrators completely and suddenly disappear, taking all the funds invested in the project with them. The project's website, social media channels, and any other communication channels are taken down, leaving investors with no way to contact or locate the perpetrators.
           </p>
-          <p className="text-gray-300 mt-2">
+          <p className="text-gray-300 mt-2 fade-in-down fade-delay-6">
             <strong>Soft Rug Pull:</strong> Involves a more gradual or subtle exit strategy. The project's administrators may gradually reduce their involvement, decreasing updates or communication with the community. They may have been siphoning off funds over time, rather than in one sudden move.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-cyan-300 mb-2">
+          <h2 className="text-xl font-semibold text-cyan-300 mb-2 fade-in-down fade-delay-7">
             NFT Rug Pulls
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-300 fade-in-down fade-delay-8">
             Rug pulls can happen with NFTs (Non-Fungible Tokens) in various ways:
           </p>
-          <ul className="list-disc list-inside text-gray-300 space-y-2 mt-2">
+          <ul className="list-disc list-inside text-gray-300 space-y-2 mt-2 fade-in-down fade-delay-9">
             <li>
               <strong>Fake NFT Projects:</strong> Scammers create fake NFT projects claiming to offer unique digital artworks or collectibles. Once buyers purchase the NFTs, the scammers disappear with the funds.
             </li>
@@ -76,13 +76,13 @@ const RugPullPage = () => {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-cyan-300 mb-2">
+          <h2 className="text-xl font-semibold text-cyan-300 mb-2 fade-in-down fade-delay-10">
             What is an “Unruggable” Project?
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-300 fade-in-down fade-delay-10">
             An “unruggable” project is a cryptocurrency or decentralized finance (DeFi) project that is perceived as resistant to rug pulls or exit scams. Characteristics include:
           </p>
-          <ul className="list-disc list-inside text-gray-300 space-y-2 mt-2">
+          <ul className="list-disc list-inside text-gray-300 space-y-2 mt-2 fade-in-down fade-delay-11">
             <li><strong>Transparency:</strong> Developers are known and publicly identifiable.</li>
             <li><strong>Locked Liquidity:</strong> Liquidity is locked through smart contracts for a specified period.</li>
             <li><strong>Renounced Ownership:</strong> Developers relinquish control over the smart contracts.</li>
@@ -92,13 +92,13 @@ const RugPullPage = () => {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-cyan-300 mb-2">
+          <h2 className="text-xl font-semibold text-cyan-300 mb-2 fade-in-down fade-delay-12">
             Legal Status of Rug Pulls
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-300 fade-in-down fade-delay-12">
             Rug pull scams can be charged as illegal activities, but it depends on where and how they happen. They may violate:
           </p>
-          <ul className="list-disc list-inside text-gray-300 space-y-2 mt-2">
+          <ul className="list-disc list-inside text-gray-300 space-y-2 mt-2 fade-in-down fade-delay-13">
             <li><strong>Securities Laws:</strong> If the rug pull involves the sale of securities.</li>
             <li><strong>Anti-Money Laundering (AML) and Know Your Customer (KYC) Regulations:</strong> If exchanges or platforms involved are laundering illegal funds.</li>
             <li><strong>Consumer Protection Laws:</strong> Including laws related to unfair or deceptive trade practices and consumer fraud.</li>
@@ -106,10 +106,10 @@ const RugPullPage = () => {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-cyan-300 mb-2">
+          <h2 className="text-xl font-semibold text-cyan-300 mb-2 fade-in-down fade-delay-14">
             How to Detect and Avoid Rug Pulls
           </h2>
-          <ul className="list-disc list-inside text-gray-300 space-y-2">
+          <ul className="list-disc list-inside text-gray-300 space-y-2 fade-in-down fade-delay-15">
             <li><strong>Conduct Thorough Research:</strong> Investigate the project's website, whitepaper, team members, and community forums.</li>
             <li><strong>Verify the Team:</strong> Ensure that the developers are real and have a credible track record.</li>
             <li><strong>Check Community Engagement:</strong> Evaluate the level of community activity and transparency.</li>
@@ -123,15 +123,15 @@ const RugPullPage = () => {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-cyan-300 mb-2">
+          <h2 className="text-xl font-semibold text-cyan-300 mb-2 fade-in-down fade-delay-16">
             AI’s Role in Fighting Rug Pull Scams
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-300 fade-in-down fade-delay-16" >
             Artificial Intelligence (AI) can play a significant role in combating rug pull scams by enhancing detection, analysis, and prevention efforts. Through pattern recognition and unsupervised machine learning, AI can analyze vast amounts of data to identify anomalies associated with rug pull scams. Natural language processing enables AI to understand textual data from various sources, aiding in faster detection and response.
           </p>
         </section>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-8 fade-in-down fade-delay-17">
           <Link
             to="/detect"
            className="inline-block bg-cyan-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-cyan-600 transition duration-300"

@@ -24,19 +24,19 @@ const features = [
 const FeaturePage = () => {
   return (
     <div className="min-h-screen bg-[#0f172a] text-white py-16 px-6 md:px-20">
-      <h1 className="text-3xl md:text-4xl font-bold text-center text-cyan-300 mb-12">
+      <h1 className="text-3xl md:text-4xl font-bold text-center text-cyan-300 mb-12 fade-in-down">
         Features That Empower You
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in-down fade-delay-3">
         {features.map((feature, idx) => (
           <div
             key={idx}
             className="bg-[#1e293b] rounded-xl p-6 shadow-lg hover:shadow-cyan-500/30 transition duration-300"
           >
-            <h2 className="text-xl font-semibold text-cyan-200 mb-2">
+            <h2 className="text-xl font-semibold text-cyan-200 mb-2 fade-in-down fade-delay-4">
               {feature.title}
             </h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed fade-in-down fade-delay-5">
               {feature.description}
             </p>
           </div>
