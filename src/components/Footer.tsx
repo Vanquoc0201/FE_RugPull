@@ -7,17 +7,15 @@ const Footer = () => {
     {
       title: "Products",
       links: [
-        { label: "Individual Product", path: "#" },
-        { label: "Team-Oriented Product", path: "#" },
-        { label: "DeFi Wallet", path: "#" },
+        { label: "Individual Product", path: "/rugpull" },
+        { label: "Team-Oriented Product", path: "/rugpull" },
       ],
     },
     {
       title: "HomePages",
       links: [
         { label: "About", path: "/about" },
-        { label: "Terms of Use", path: "/terms-of-use" },
-        { label: "Terms of Operation", path: "#" },
+        { label: "Terms of Operation", path: "/terms-of-operation" },
       ],
     },
     {

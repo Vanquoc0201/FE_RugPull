@@ -11,8 +11,9 @@ import FAQPage from "../pages/HomeTemplates/FAQPage";
 import FeaturePage from "../pages/HomeTemplates/FeaturesPage";
 import RugPullPage from "../pages/HomeTemplates/RugPullPage";
 import DetectPage from "../pages/HomeTemplates/DetectPage";
-import TermsOfService from "../pages/HomeTemplates/TermsPage/";
+import TermsOfService from "../pages/HomeTemplates/TermsOfUsePage";
 import PrivacyPage from "../pages/HomeTemplates/PrivacyPage";
+import TermsOfOperation from "../pages/HomeTemplates/TermsOfOperation";
 
 
 type TRoute = {
@@ -69,6 +70,10 @@ export const routes: TRoute[] = [
       {
         path: "/privacy-policy",
         element: <PrivacyPage />,
+      },
+      {
+        path: "/terms-of-operation",
+        element: <TermsOfOperation />
       }
     ],
   },

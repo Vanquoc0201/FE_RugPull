@@ -201,10 +201,10 @@ export const PrivacyPage = () => {
               <strong>Email</strong>: contact@rugpulldetected.com.
             </li>
             <li>
-              <strong>Phone</strong>: [+84-XXX-XXX-XXXX].
+              <strong>Phone</strong>: (+84) 123-456-789.
             </li>
             <li>
-              <strong>Address</strong>: [Ho Chi Minh, City, Vietnam].
+              <strong>Address</strong>: Ho Chi Minh City, Vietnam.
             </li>
           </ul>
           <br />
