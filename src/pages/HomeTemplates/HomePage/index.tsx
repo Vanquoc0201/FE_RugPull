@@ -7,18 +7,10 @@ export default function HomePage() {
       <p className="mt-6 max-w-2xl text-center text-gray-300 text-lg fade-in-down fade-delay-2">
         Your trusted decentralized crypto platform to prevent fraud and secure your investments.
       </p>
-<<<<<<< HEAD
-      <div className="mt-10">
-        <a
-          className="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-xl shadow-lg transition inline-block text-center"
-          href="/rugpull"
-        >
-=======
       <div className="mt-10 fade-in-down fade-delay-4">
         <button className="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-xl shadow-lg transition">
->>>>>>> fe14ee2656afe05cb6138ae269d75a8e18c03c2c
           Get Started
-        </a>
+        </button>
       </div>
     </div>
   );
