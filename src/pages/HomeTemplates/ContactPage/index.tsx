@@ -30,7 +30,7 @@ const ContactPage = () => {
             <textarea
               rows={4}
               className="w-full px-4 py-2 rounded-md bg-[#0f172a] border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-              placeholder="Your message..."
+              placeholder="Your message to us..."
             ></textarea>
           </div>
           <button

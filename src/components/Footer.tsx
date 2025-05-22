@@ -1,3 +1,5 @@
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { AiOutlineTwitter } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -5,47 +7,38 @@ const Footer = () => {
     {
       title: "Products",
       links: [
-        { label: "Exchange", path: "#" },
-        { label: "App", path: "#" },
-        { label: "Pay", path: "#" },
+        { label: "Individual Product", path: "#" },
+        { label: "Team-Oriented Product", path: "#" },
         { label: "DeFi Wallet", path: "#" },
-        { label: "Earn", path: "#" },
       ],
     },
     {
-      title: "Company",
+      title: "HomePages",
       links: [
         { label: "About", path: "/about" },
-        { label: "Careers", path: "#" },
-        { label: "Press", path: "#" },
-        { label: "Security", path: "#" },
-        { label: "News", path: "#" },
+        { label: "Terms of Use", path: "/terms-of-use" },
+        { label: "Terms of Operation", path: "#" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { label: "Help Center", path: "#" },
-        { label: "Academy", path: "#" },
-        { label: "Market Updates", path: "#" },
-        { label: "Events", path: "#" },
+        { label: "Help Center", path: "/Contact" },
       ],
     },
     {
-      title: "Legal",
+      title: "About Us",
       links: [
-        { label: "Privacy Policy", path: "#" },
-        { label: "Terms of Service", path: "#" },
-        { label: "Disclosures", path: "#" },
+        { label: "Privacy Policy", path: "/privacy-policy" },
+        { label: "Terms of Service", path: "/terms-of-service" },
       ],
     },
   ];
 
   const socialLinks = [
-    { name: "Facebook", icon: "🌐", path: "https://facebook.com" },
-    { name: "Twitter", icon: "🐦", path: "https://twitter.com" },
-    { name: "YouTube", icon: "📺", path: "https://youtube.com" },
-    { name: "Instagram", icon: "📷", path: "https://instagram.com" },
+    { name: "Facebook", icon: <FaFacebook size={20}/>, path: "https://Facebook.com" },
+    { name: "Twitter", icon:  <AiOutlineTwitter size={20} />, path: "https://twitter.com" },
+    { name: "Instagram", icon: <FaInstagram size={20}/>, path: "https://instagram.com" },
   ];
 
   return (
@@ -106,7 +99,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-sm text-gray-400 text-center">
-          © {new Date().getFullYear()} Crypto.com. All rights reserved.
+          © {new Date().getFullYear()} Rug Pull Detected. All rights reserved.
         </p>
       </div>
     </footer>

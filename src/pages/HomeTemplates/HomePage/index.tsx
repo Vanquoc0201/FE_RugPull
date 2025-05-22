@@ -8,9 +8,12 @@ export default function HomePage() {
         Your trusted decentralized crypto platform to prevent fraud and secure your investments.
       </p>
       <div className="mt-10">
-        <button className="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-xl shadow-lg transition">
+        <a
+          className="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-xl shadow-lg transition inline-block text-center"
+          href="/rugpull"
+        >
           Get Started
-        </button>
+        </a>
       </div>
     </div>
   );
