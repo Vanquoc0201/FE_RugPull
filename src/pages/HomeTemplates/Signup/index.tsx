@@ -21,15 +21,15 @@ const SignUpPage = () => {
   return (
     <div className="min-h-screen bg-[#0f172a] flex items-center justify-center px-4">
       <div className="bg-[#1e293b] rounded-2xl shadow-xl max-w-md w-full p-8 space-y-6 text-white">
-        <h2 className="text-3xl font-bold text-center text-cyan-300">
+        <h2 className="text-3xl font-bold text-center text-cyan-300 fade-in-down">
           Create an Account 📝
         </h2>
-        <p className="text-center text-gray-400">Sign up to get started</p>
+        <p className="text-center text-gray-400 fade-in-down fade-delay-1">Sign up to get started</p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 fade-in-down fade-delay-2">
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-300">
+            <label className="block text-sm font-medium text-gray-300 fade-in-down fade-delay-3">
               Email Address
             </label>
             <input
@@ -38,14 +38,14 @@ const SignUpPage = () => {
               required
               value={form.email}
               onChange={handleChange}
-              className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 fade-in-down fade-delay-4"
               placeholder="you@example.com"
             />
           </div>
 
           {/* Password */}
           <div>
-            <label className="block text-sm font-medium text-gray-300">
+            <label className="block text-sm font-medium text-gray-300 fade-in-down fade-delay-5">
               Password
             </label>
             <input
@@ -54,14 +54,14 @@ const SignUpPage = () => {
               required
               value={form.password}
               onChange={handleChange}
-              className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 fade-in-down fade-delay-6"
               placeholder="••••••••"
             />
           </div>
 
           {/* Address */}
           <div>
-            <label className="block text-sm font-medium text-gray-300">
+            <label className="block text-sm font-medium text-gray-300 fade-in-down fade-delay-7">
               Address
             </label>
             <input
@@ -70,14 +70,14 @@ const SignUpPage = () => {
               required
               value={form.address}
               onChange={handleChange}
-              className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 fade-in-down fade-delay-8"
               placeholder="123 Main St"
             />
           </div>
 
           {/* Phone */}
           <div>
-            <label className="block text-sm font-medium text-gray-300">
+            <label className="block text-sm font-medium text-gray-300 fade-in-down fade-delay-9">
               Phone Number
             </label>
             <input
@@ -86,22 +86,22 @@ const SignUpPage = () => {
               required
               value={form.phone}
               onChange={handleChange}
-              className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 fade-in-down fade-delay-10"
               placeholder="0123456789"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-cyan-400 to-cyan-600 text-white py-2 rounded-lg font-semibold hover:from-cyan-500 hover:to-cyan-700 transition duration-200"
+            className="w-full bg-gradient-to-r from-cyan-400 to-cyan-600 text-white py-2 rounded-lg font-semibold hover:from-cyan-500 hover:to-cyan-700 transition duration-200 fade-in-down fade-delay-11"
           >
             Sign Up
           </button>
         </form>
 
-        <p className="text-sm text-center text-gray-400">
+        <p className="text-sm text-center text-gray-400 fade-in-down fade-delay-12">
           Already have an account?{" "}
-          <Link to="/login" className="text-cyan-400 hover:underline">
+          <Link to="/login" className="text-cyan-400 hover:underline fade-in-down fade-delay-13">
             Log In
           </Link>
         </p>
