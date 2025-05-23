@@ -17,9 +17,7 @@ const DetectPage = () => {
     setResult("⚠️ Invalid address format. Please enter a valid Solana wallet address.");
     return;
   }
-
   setLoading(true);
-
   try {
     const data = await appService.detectRugPull(address);
     setResult(data.prediction_message);
@@ -87,6 +85,23 @@ const DetectPage = () => {
             <li>Admin has mint/burn privileges</li>
         </ul>
         </div>
+        <div className="bg-[#0f172a] border border-cyan-700 p-4 rounded-lg text-sm text-gray-300 mt-6 fade-in-down fade-delay-12">
+  <h3 className="font-semibold text-cyan-400 mb-2 fade-in-down fade-delay-13">
+    How to get Liquidity Pool Address:
+  </h3>
+  <p className="fade-in-down fade-delay-14">
+    You can find liquidity pool addresses by visiting{" "}
+    <a
+      href="https://www.dextools.io/app/en/pairs"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-cyan-400 underline hover:text-cyan-300"
+    >
+      DEXTools Pairs
+    </a>{" "}
+    and searching for the token you're interested in.
+  </p>
+</div>
       </div>
     </div>
   );
