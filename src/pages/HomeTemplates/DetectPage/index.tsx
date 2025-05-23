@@ -1,26 +1,36 @@
 import { useState } from "react";
 import { ShieldCheckIcon } from "@heroicons/react/24/solid";
+import appService from "../../../services/app.service";
 
 const DetectPage = () => {
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<string | null>(null);
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    setLoading(true);
-    setResult(null);
+  const handleSubmit = async (e: any) => {
+  e.preventDefault();
+  setResult(null);
 
-    // Giả lập kiểm tra
-    setTimeout(() => {
-      setLoading(false);
-      setResult(
-        address.includes("bad") // ví dụ đơn giản để test
-          ? "⚠️ Warning: This pool has risky characteristics. Be careful!"
-          : "✅ This pool seems safe. No rug pull detected."
-      );
-    }, 2000);
-  };
+  const solanaAddressRegex = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
+
+  if (!solanaAddressRegex.test(address)) {
+    setResult("⚠️ Invalid address format. Please enter a valid Solana wallet address.");
+    return;
+  }
+
+  setLoading(true);
+
+  try {
+    const data = await appService.detectRugPull(address);
+    setResult(data.prediction_message);
+  } catch (error) {
+    setResult("❌ Failed to analyze the address. Please try again later.");
+  } finally {
+    setLoading(false);
+  }
+};
+
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white px-4 py-16">

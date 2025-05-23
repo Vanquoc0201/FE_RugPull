@@ -1,5 +1,5 @@
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { AiOutlineTwitter } from "react-icons/ai";
+import { AiOutlineTwitter } from "react-icons/ai"
 import { Link } from "react-router-dom";
 
 const Footer = () => {
