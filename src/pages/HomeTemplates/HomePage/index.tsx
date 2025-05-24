@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#0f172a] text-white px-6 py-20 flex flex-col items-center justify-center">
@@ -8,9 +10,12 @@ export default function HomePage() {
         Your trusted decentralized crypto platform to prevent fraud and secure your investments.
       </p>
       <div className="mt-10 fade-in-down fade-delay-4">
-        <button className="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-xl shadow-lg transition">
-          Get Started
-        </button>
+      <Link
+        to="/detect"
+        className="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-xl shadow-lg transition"
+      >
+        Get Started
+      </Link>
       </div>
     </div>
   );

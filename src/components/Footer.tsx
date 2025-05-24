@@ -1,5 +1,5 @@
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { AiOutlineTwitter } from "react-icons/ai"
+import { AiOutlineTwitter } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -20,9 +20,7 @@ const Footer = () => {
     },
     {
       title: "Resources",
-      links: [
-        { label: "Help Center", path: "/Contact" },
-      ],
+      links: [{ label: "Help Center", path: "/contact" }],
     },
     {
       title: "About Us",
@@ -34,13 +32,25 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "Facebook", icon: <FaFacebook size={20}/>, path: "https://Facebook.com" },
-    { name: "Twitter", icon:  <AiOutlineTwitter size={20} />, path: "https://twitter.com" },
-    { name: "Instagram", icon: <FaInstagram size={20}/>, path: "https://instagram.com" },
+    {
+      name: "Facebook",
+      icon: <FaFacebook size={20} />,
+      path: "https://facebook.com",
+    },
+    {
+      name: "Twitter",
+      icon: <AiOutlineTwitter size={20} />,
+      path: "https://twitter.com",
+    },
+    {
+      name: "Instagram",
+      icon: <FaInstagram size={20} />,
+      path: "https://instagram.com",
+    },
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10 px-6 mt-10">
+    <footer className="bg-gray-800 text-gray-300 py-10 px-6 w-full">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
         {/* Logo and Description */}
         <div>
@@ -63,12 +73,12 @@ const Footer = () => {
             <ul className="space-y-1">
               {section.links.map(({ label, path }) => (
                 <li key={label}>
-                  <a
-                    href={path}
+                  <Link
+                    to={path}
                     className="text-sm transition hover:text-white text-blue-600"
                   >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

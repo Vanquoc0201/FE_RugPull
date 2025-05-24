@@ -1,16 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 import appService from "../../../services/app.service";
+import { Link } from "react-router-dom";
 
 const DetectPage = () => {
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<string | null>(null);
-
+  const [userHasToken, setUserHasToken] = useState(false);
+  useEffect(() => {
+      const token = localStorage.getItem("accessToken");
+      const username = localStorage.getItem("username");
+      const role = localStorage.getItem("role");
+      if (token && username && role === "Vip") {
+        setUserHasToken(true);
+      }
+  }, []);
   const handleSubmit = async (e: any) => {
   e.preventDefault();
   setResult(null);
-
+    const token = localStorage.getItem("accessToken");
+  if (!token) {
+    setResult("⚠️ You must be logged in to detect rug pulls.");
+    return;
+  }
   const solanaAddressRegex = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
 
   if (!solanaAddressRegex.test(address)) {
@@ -73,35 +86,41 @@ const DetectPage = () => {
           </div>
         )}
 
-        <div className="bg-[#0f172a] border border-cyan-700 p-4 rounded-lg text-sm text-gray-300 mt-6 fade-in-down fade-delay-9">
-          <h3 className="font-semibold text-cyan-400 mb-2 fade-in-down fade-delay-10">
-            Common Rug Pull Indicators:
-          </h3>
-          <ul className="list-disc list-inside space-y-1 fade-in-down fade-delay-11">
-            <li>Liquidity is not locked or unlocks soon</li>
-            <li>High slippage or high sell tax (e.g. {'>'} 20%)</li>
-            <li>Contract is not verified or unaudited</li>
-            <li>Developer wallet holds too much supply</li>
-            <li>Admin has mint/burn privileges</li>
-        </ul>
-        </div>
-        <div className="bg-[#0f172a] border border-cyan-700 p-4 rounded-lg text-sm text-gray-300 mt-6 fade-in-down fade-delay-12">
-  <h3 className="font-semibold text-cyan-400 mb-2 fade-in-down fade-delay-13">
-    How to get Liquidity Pool Address:
-  </h3>
-  <p className="fade-in-down fade-delay-14">
-    You can find liquidity pool addresses by visiting{" "}
+        {userHasToken ? (
+  <>
+    <div className="bg-[#0f172a] border border-cyan-700 p-4 rounded-lg text-sm text-gray-300 mt-6 fade-in-down fade-delay-9">
+      <h3 className="font-semibold text-cyan-400 mb-2 fade-in-down fade-delay-10">
+        Common Rug Pull Indicators:
+      </h3>
+      <ul className="list-disc list-inside space-y-1 fade-in-down fade-delay-11">
+        <li>Total Liquidity Added/Removed</li>
+        <li>Add/Remove Ratio</li>
+        <li>Pool Status (Active/Inactive)</li>
+        <li>Lifetime Duration (First/Last Activity)</li>
+        <li>Last Swap Details</li>
+      </ul>
+    </div>
+
+    <div className="bg-[#0f172a] border border-cyan-700 p-4 rounded-lg text-sm text-gray-300 mt-6 fade-in-down fade-delay-12">
+      <Link to="/getlpa">
+        <h3 className="font-semibold text-cyan-400 mb-2 fade-in-down fade-delay-13 hover:underline cursor-pointer">
+          How to get Liquidity Pool Address
+        </h3>
+      </Link>
+    </div>
+  </>
+) : (
+  <div className="text-center mt-6 fade-in-down fade-delay-9">
+    <p className="mb-2 text-sm text-gray-300">Want more detailed info about LP analysis?</p>
     <a
-      href="https://www.dextools.io/app/en/pairs"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-cyan-400 underline hover:text-cyan-300"
+      href="/premium"
+      className="inline-block bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded transition"
     >
-      DEXTools Pairs
-    </a>{" "}
-    and searching for the token you're interested in.
-  </p>
-</div>
+      More Information About Liquidity Pool Address
+    </a>
+  </div>
+)}
+
       </div>
     </div>
   );

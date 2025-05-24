@@ -1,15 +1,35 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import authService from "../../../services/auth.service";
+import { toast } from "react-toastify";
+import { useAuth } from "../../../contexts/authContext";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Xử lý đăng nhập ở đây
-    console.log("Logging in with", { email, password });
-  };
+const handleLogin = async (e: React.FormEvent) => {
+  e.preventDefault();
+  try {
+    const res = await authService.token({ email, password });
+    const accessToken = res?.result.accessToken;
+    if (!accessToken) {
+      toast.error("Không nhận được access token từ server.");
+      return;
+    }
+    const response = await authService.login(accessToken);
+    toast.success("Đăng nhập thành công! 🎉");
+    login(accessToken, response?.result.username, response?.result.role[0]?.name);
+
+    navigate("/");
+  } catch (error: any) {
+    toast.error(error?.response?.data?.message || "Đăng nhập thất bại! 😢");
+  }
+};
+
+
 
   return (
     <div className="min-h-screen bg-[#0f172a] flex items-center justify-center px-4">
@@ -60,6 +80,12 @@ const LoginPage = () => {
           Don’t have an account?{" "}
           <Link to="/signup" className="text-cyan-400 hover:underline fade-in-down fade-delay-10">
             Sign Up
+          </Link>
+        </p>
+        <p className="text-sm text-center text-gray-400 fade-in-down fade-delay-9">
+          Forgot password?{" "}
+          <Link to="/retrieve" className="text-cyan-400 hover:underline fade-in-down fade-delay-10">
+            Retrieve
           </Link>
         </p>
       </div>

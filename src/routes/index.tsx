@@ -14,6 +14,11 @@ import DetectPage from "../pages/HomeTemplates/DetectPage";
 import TermsOfService from "../pages/HomeTemplates/TermsOfUsePage";
 import PrivacyPage from "../pages/HomeTemplates/PrivacyPage";
 import TermsOfOperation from "../pages/HomeTemplates/TermsOfOperation";
+import PageNotFound from "../pages/PageNotFound";
+import PremiumPage from "../pages/HomeTemplates/PremiumPage";
+import CheckOutPage from "../pages/HomeTemplates/CheckoutPage";
+import GetLPAPage from "../pages/HomeTemplates/GetLPAPage";
+import RetrievePage from "../pages/HomeTemplates/RetrievePage";
 
 
 type TRoute = {
@@ -74,9 +79,29 @@ export const routes: TRoute[] = [
       {
         path: "/terms-of-operation",
         element: <TermsOfOperation />
-      }
+      },
+      {
+        path: "/premium",
+        element: <PremiumPage />
+      },
+      {
+        path: "/checkout",
+        element: <CheckOutPage />
+      },
+      {
+        path: "/getlpa",
+        element: <GetLPAPage />
+      },
+      {
+        path: "/retrieve",
+        element: <RetrievePage />
+      },
     ],
   },
+  {
+    path : "*",
+    element : <PageNotFound />
+  }
   
 ];
 

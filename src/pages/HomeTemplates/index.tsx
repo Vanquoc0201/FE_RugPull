@@ -4,10 +4,12 @@ import Navbar from "../../components/Navbar"
 
 export default function HomeTemplates() {
   return (
-    <div>
-        <Navbar />
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <div className="flex-grow">
         <Outlet />
-        <Footer />
+      </div>
+      <Footer />
     </div>
   )
 }

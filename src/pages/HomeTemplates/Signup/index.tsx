@@ -1,24 +1,37 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import authService from "../../../services/auth.service";
+import { ToastContainer, toast } from "react-toastify";
 const SignUpPage = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
-    address: "",
-    phone: "",
+    username: "",
+    phonenumber: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Sign up with:", form);
+    console.log(form);
+    try {
+      await authService.register(form);
+      toast.success("Đăng ký thành công! 🎉");
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000); // chờ 2s để user thấy thông báo
+    } catch (error: any) {
+      toast.error(error?.response?.data?.message || "Đăng ký thất bại! 😢");
+    }
   };
 
   return (
+    <div>
     <div className="min-h-screen bg-[#0f172a] flex items-center justify-center px-4">
       <div className="bg-[#1e293b] rounded-2xl shadow-xl max-w-md w-full p-8 space-y-6 text-white">
         <h2 className="text-3xl font-bold text-center text-cyan-300 fade-in-down">
@@ -39,7 +52,7 @@ const SignUpPage = () => {
               value={form.email}
               onChange={handleChange}
               className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 fade-in-down fade-delay-4"
-              placeholder="you@example.com"
+              placeholder="vanquoc06@gmail.com"
             />
           </div>
 
@@ -55,23 +68,23 @@ const SignUpPage = () => {
               value={form.password}
               onChange={handleChange}
               className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 fade-in-down fade-delay-6"
-              placeholder="••••••••"
+              placeholder="*****"
             />
           </div>
 
-          {/* Address */}
+          {/* Username */}
           <div>
             <label className="block text-sm font-medium text-gray-300 fade-in-down fade-delay-7">
-              Address
+              Username
             </label>
             <input
               type="text"
-              name="address"
+              name="username"
               required
-              value={form.address}
+              value={form.username}
               onChange={handleChange}
               className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 fade-in-down fade-delay-8"
-              placeholder="123 Main St"
+              placeholder="vanquoc0201"
             />
           </div>
 
@@ -81,10 +94,10 @@ const SignUpPage = () => {
               Phone Number
             </label>
             <input
-              type="tel"
-              name="phone"
+              type="text"
+              name="phonenumber"
               required
-              value={form.phone}
+              value={form.phonenumber}
               onChange={handleChange}
               className="mt-1 w-full px-4 py-2 bg-[#0f172a] border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 fade-in-down fade-delay-10"
               placeholder="0123456789"
@@ -106,6 +119,8 @@ const SignUpPage = () => {
           </Link>
         </p>
       </div>
+    </div>
+    <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
