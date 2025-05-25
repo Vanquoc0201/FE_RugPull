@@ -16,16 +16,16 @@ const handleLogin = async (e: React.FormEvent) => {
     const res = await authService.token({ email, password });
     const accessToken = res?.result.accessToken;
     if (!accessToken) {
-      toast.error("Không nhận được access token từ server.");
+      toast.error("No has token from server! 😢");
       return;
     }
     const response = await authService.login(accessToken);
-    toast.success("Đăng nhập thành công! 🎉");
+    toast.success("Login successful! 🎉");
     login(accessToken, response?.result.username, response?.result.role[0]?.name);
 
     navigate("/");
   } catch (error: any) {
-    toast.error(error?.response?.data?.message || "Đăng nhập thất bại! 😢");
+    toast.error(error?.response?.data?.message || "Login failed! 😢");
   }
 };
 

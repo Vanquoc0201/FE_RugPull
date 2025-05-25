@@ -21,12 +21,12 @@ const SignUpPage = () => {
     console.log(form);
     try {
       await authService.register(form);
-      toast.success("Đăng ký thành công! 🎉");
+      toast.success("Sign Up successful! 🎉");
       setTimeout(() => {
         navigate("/login");
       }, 2000); // chờ 2s để user thấy thông báo
     } catch (error: any) {
-      toast.error(error?.response?.data?.message || "Đăng ký thất bại! 😢");
+      toast.error(error?.response?.data?.message || "Sign Up failed! 😢");
     }
   };
 
