@@ -19,6 +19,7 @@ import PremiumPage from "../pages/HomeTemplates/PremiumPage";
 import CheckOutPage from "../pages/HomeTemplates/CheckoutPage";
 import GetLPAPage from "../pages/HomeTemplates/GetLPAPage";
 import RetrievePage from "../pages/HomeTemplates/RetrievePage";
+import DefinitionPage from "../pages/HomeTemplates/Definition";
 
 
 type TRoute = {
@@ -95,6 +96,10 @@ export const routes: TRoute[] = [
       {
         path: "/retrieve",
         element: <RetrievePage />
+      },
+      {
+        path: "/definition",
+        element: <DefinitionPage />
       },
     ],
   },

@@ -28,12 +28,9 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-[#1a1f2b] text-white shadow z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        {/* Logo */}
         <div className="flex items-center">
           <img src="/screenshots/logo.jpg" alt="RugPull Logo" className="h-8 w-auto" />
         </div>
-
-        {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-6">
           {navLinks.map(({ label, path }) => (
             <Link

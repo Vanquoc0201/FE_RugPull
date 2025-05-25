@@ -7,6 +7,8 @@ const DetectPage = () => {
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<string | null>(null);
+  const [explanation, setExplanation] = useState<[string, number][]>([]);
+  const [heliusData, setHeliusData] = useState<Record<string, any> | null>(null);
   const [userHasToken, setUserHasToken] = useState(false);
   useEffect(() => {
       const token = localStorage.getItem("accessToken");
@@ -33,9 +35,12 @@ const DetectPage = () => {
   setLoading(true);
   try {
     const data = await appService.detectRugPull(address);
-    setResult(data.prediction_message);
-  } catch (error) {
-    setResult("❌ Failed to analyze the address. Please try again later.");
+    setResult(data.AiModule?.prediction_message);
+    setExplanation(data.AiModule?.lime_explanation || []);
+    setHeliusData(data.helius || null);
+  } catch (error:any) {
+    setResult(error.response?.data?.message || "❌ Failed to analyze the address. Please try again later.");
+    setHeliusData(null);
   } finally {
     setLoading(false);
   }
@@ -103,11 +108,70 @@ const DetectPage = () => {
 
     <div className="bg-[#0f172a] border border-cyan-700 p-4 rounded-lg text-sm text-gray-300 mt-6 fade-in-down fade-delay-12">
       <Link to="/getlpa">
-        <h3 className="font-semibold text-cyan-400 mb-2 fade-in-down fade-delay-13 hover:underline cursor-pointer">
+        <h3 className="font-semibold flex justify-center text-cyan-400 mb-2 fade-in-down fade-delay-13 hover:underline cursor-pointer">
           How to get Liquidity Pool Address
         </h3>
       </Link>
+      {explanation.length > 0 && (
+  <div className="bg-[#0f172a] border border-cyan-700 p-4 rounded-lg text-sm text-gray-300 mt-6 fade-in-down fade-delay-14">
+    <h3 className="font-semibold text-cyan-400 mb-2">Explanation Table:</h3>
+    <div className="overflow-x-auto">
+      <table className="min-w-full table-auto border-collapse border border-gray-600 text-left">
+        <thead>
+          <tr className="bg-cyan-700 text-white">
+            <th className="border border-gray-600 px-4 py-2">Feature</th>
+            <th className="border border-gray-600 px-4 py-2">Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          {explanation.map(([feature, weight], index) => (
+            <tr key={index} className="hover:bg-gray-800">
+              <td className="border border-gray-600 px-4 py-2">{feature}</td>
+              <td className="border border-gray-600 px-4 py-2">{weight.toFixed(6)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
+  </div>
+)}
+
+{heliusData && (
+  <div className="bg-[#0f172a] border border-cyan-700 p-4 rounded-lg text-sm text-gray-300 mt-6 fade-in-down fade-delay-15">
+    <h3 className="font-semibold text-cyan-400 mb-2">Helius Metrics:</h3>
+    <div className="overflow-x-auto">
+      <table className="min-w-full table-auto border-collapse border border-gray-600 text-left">
+        <thead>
+          <tr className="bg-cyan-700 text-white">
+            <th className="border border-gray-600 px-4 py-2">Metric</th>
+            <th className="border border-gray-600 px-4 py-2">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(heliusData).map(([key, value], index) => (
+            <tr key={index} className="hover:bg-gray-800">
+              <td className="border border-gray-600 px-4 py-2">{key}</td>
+              <td className="border border-gray-600 px-4 py-2">
+                {typeof value === "number" ? value.toFixed(6) : String(value)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+
+{(explanation.length > 0 || heliusData) && (
+  <Link to="/definition">
+    <h3 className="font-semibold flex justify-center text-cyan-400 mt-6 fade-in-down fade-delay-16 hover:underline cursor-pointer">
+      Definition
+    </h3>
+  </Link>
+)}
+
+    </div>
+      
   </>
 ) : (
   <div className="text-center mt-6 fade-in-down fade-delay-9">
